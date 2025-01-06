@@ -49,10 +49,10 @@ RSpec.describe FiskalyRuby::KassenSichV::Authenticate do
   describe '.call' do
     include_context 'with a stubbed request', method: :post, response_body: { 'access_token' => '<Access Token>' }
 
-    subject(:authenticate) { described_class.call(args) }
+    subject(:authenticate) { described_class.call(**args) }
 
     let(:args) { { api_key: 'some key', api_secret: 'some secret...' } }
-    let(:authenticate_instance) { described_class.new(args) }
+    let(:authenticate_instance) { described_class.new(**args) }
 
     before do
       allow(described_class).to receive(:new).and_return(authenticate_instance)

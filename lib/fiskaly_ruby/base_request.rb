@@ -15,7 +15,7 @@ module FiskalyRuby
     # @param args [Array] List of arguments to pass to `call` instance method
     #
     # @return [NotImplementedError] If `call` method is not defined in subclass
-    def self.call(**args)
+    def self.call(args)
       new(**args).call
     end
 
